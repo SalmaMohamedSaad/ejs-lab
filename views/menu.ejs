@@ -13,7 +13,9 @@
       <%= category.charAt(0).toUpperCase() + category.slice(1)%>
     </h2>
     <% menu.forEach((item,index) => { if(item.category===category){ %>
-    <h3 style="color: green"><%= item.name %></h3>
+    <h3 style="color: green">
+      <%= item.name %><%= item.rating===5 ? "⭐" : ""%>
+    </h3>
     <h3>Price: <%= item.price %></h3>
     <h3>Rating: <%= item.rating %></h3>
     <h3>Details: <%= item.details %></h3>
