@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <h1>Full Menu</h1>
+    <% categoriesArray.forEach((category)=>{ %>
+    <h2 style="color: red">
+      <%= category.charAt(0).toUpperCase() + category.slice(1)%>
+    </h2>
+    <% menu.forEach((item,index) => { if(item.category===category){ %>
+    <h3 style="color: green"><%= item.name %></h3>
+    <h3>Price: <%= item.price %></h3>
+    <h3>Rating: <%= item.rating %></h3>
+    <h3>Details: <%= item.details %></h3>
+    <% } }) });%>
+  </body>
+</html>
